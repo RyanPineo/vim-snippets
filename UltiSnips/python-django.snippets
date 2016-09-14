@@ -1,0 +1,36 @@
+priority -50
+
+snippet uget "import ugettext_lazy as _" b
+from django.utils.translation import ugettext_lazy as _
+endsnippet
+
+snippet fact "django factory" b
+class $1Factory(factory.DjangoModelFactory):
+	$0
+	class Meta:
+		model = '$2.$1'
+endsnippet
+
+snippet subf "factory.SubFactory"
+factory.SubFactory('tests.factories.$1Factory')
+endsnippet
+
+snippet testa "Api Test"
+class Test$1(ApiMixin):
+	view_name = '$2'
+
+	$0
+endsnippet
+
+snippet f_testapi
+import pytest
+
+import tests.factories as f
+import tests.helpers as h
+from tests.mixins import ApiMixin
+
+pytestmark = pytest.mark.django_db
+
+
+$0
+endsnippet
