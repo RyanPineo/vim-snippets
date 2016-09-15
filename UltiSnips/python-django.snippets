@@ -34,3 +34,13 @@ pytestmark = pytest.mark.django_db
 
 $0
 endsnippet
+
+
+snippet f_appc "AppConfig"
+from django.apps import AppConfig
+
+
+class $1Config(AppConfig):
+	name = 'apps.$2'
+	verbose_name = '$3'
+endsnippet
